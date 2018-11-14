@@ -75,7 +75,7 @@
       "enabled": true
     }
   },
-  "tests": "./test/features/*/*_test.js",
+  "tests": "./test/features/sign*/*_test.js",
   "timeout": 10000,
   "name": "publish-test"
 }
