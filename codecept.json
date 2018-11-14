@@ -1,0 +1,81 @@
+{
+  "output": "./test/output",
+  "helpers": {
+    "Puppeteer": {
+      "url": "http://publish-develop.eb.dev.dadi.technology",
+      "show": false,
+      "restart": false,
+      "waitForAction": 1000,
+      "keepBrowserState": true,
+      "uniqueScreenshotNames": true,
+      "waitForTimeout": 11000,
+      "waitForNavigation": "domcontentloaded",
+      "windowSize": "1425x710",
+      "chrome": {
+        "args": [
+          "--no-sandbox"
+        ]
+      }
+    },
+    "Assertions": {
+      "require": "./test/helpers/assertions_helper.js"
+    },
+    "DataHelper": {
+      "require": "./test/helpers/data_helper.js"
+    }
+  },
+  "include": {
+    "I": "./test/stepDefinitions/steps_file.js",
+    "articlePage": "./test/pages/Article.js",
+    "homePage": "./test/pages/Home.js",
+    "loginPage": "./test/pages/Login.js",
+    "profilePage": "./test/pages/Profile.js"
+  },
+  "mocha": {
+    "reporterOptions": {
+      "codeceptjs-cli-reporter": {
+        "stdout": "-",
+        "options": {
+          "verbose": false,
+          "steps": true
+        }
+      },
+      "mochawesome": {
+        "stdout": "./test/output/console.log",
+        "options": {
+          "reportDir": "./test/output",
+          "reportFilename": "report"
+        }
+      }
+    }
+  },
+  "bootstrap": false,
+  "teardown": null,
+  "hooks": [],
+  "multiple": {
+    "basic": {
+      "browsers": [
+        "chrome",
+        "firefox"
+      ]
+    },
+    "parallel": {
+      "chunks": 2,
+      "browsers": [
+        "chrome"
+      ]
+    }
+  },
+  "plugins": {
+    "allure": {
+      "outputDir": "./test/output/allure",
+      "enabled": false
+    },
+    "screenshotOnFail": {
+      "enabled": true
+    }
+  },
+  "tests": "./test/features/*/*_test.js",
+  "timeout": 10000,
+  "name": "publish-test"
+}
