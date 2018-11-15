@@ -1,6 +1,10 @@
 deploy:
   provider: s3
-  region: "eu-west-1"
+  access_key_id: AKIAIF7LKDH7ZZDUXLDA
+  secret_access_key:
+    secure: bTh3yuwtzQ3dBvjGLFYJFk+iu4KLG8nd8UvBH0FQmk0mV482aYWGBHiES3RcVC9aLB6sLQ+wWl+jyblMM7MwEPWsxIL/txr314VSr/mCGG3l9DipSKNoXG8MI76PepK0XccsNDFS1+mFHwwonu4nswkwGrpbFHd6FJk3uSmC4i0+ErGlsKWYwn5hhzVkiXIIY02BI2xXvnJDElpN4YzoFJNZVGItwxD9J982Y0w/V2xGoYeXKtUikzRgdC7DmPW6ZHJpPM0iuuA1kLJgG1/5+MTGK7JGXVTpYBMG4BOO2YuxzqbJ58ksej91G9BibJ5FQE7Qt33vrZOqC8DC8sg9j5F5mr0uGt5Xl5gFw/kGcYR3SoAwZ7ZfHzxZji3xUCCrIKanT4wb+1VMQNdXMPIa6MzYnRRjdA8RhOecnyR3f6EiBbpM0MHbR1629VTlzVao1QbKDFiyoXNqalsPsZTUgO5fpOett/D6VqC25EfEt/s0N8zO6j3kASwTmYxy+JLueWj9RSxBX6ZMcEC0O7sbL9EoxS4aaGnHWqHMhbDV2Q6NLBPMm8xmYUaKh8FQKfK8L9r8Ka6Zs0zFovafdylQhCRh426/d18at8vG5jKwUq5l24mg6EfEqiH+3vIcdjtXJ0rmR5Kr3e2dMRHUE2hP0Go37le46vnPOTRdQiPApKQ=
+  bucket: lambie
+  region: eu-west-1
   acl: public_read
   skip_cleanup: true
 language: node_js
